@@ -1,25 +1,16 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav-menu');
 
-    // Lógica para el menú de hamburguesa en celulares
-    if (hamburger && navMenu) {
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-    }
+    // Evento para abrir/cerrar el menú
+    hamburger.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+    });
 
-    // Lógica para el desplazamiento suave (smooth scrolling)
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-
-            // Cierra el menú de hamburguesa al hacer clic en un enlace
-            if (navMenu && navMenu.classList.contains('active')) {
+    // Evento para cerrar el menú al hacer clic en un enlace (en celulares)
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (navMenu.classList.contains('active')) {
                 navMenu.classList.remove('active');
             }
         });
