@@ -94,9 +94,9 @@ header h1 {
     cursor: pointer;
 }
 
-/* --- SECCIÓN HERO --- */
+/* --- SECCIÓN HERO (CON LA CORRECCIÓN DE TEXTO) --- */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://i.imgur.com/uxueJXg.jpeg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://i.imgur.com/uxueJXg.jpeg') no-repeat center center/cover;
     color: var(--white);
     text-align: center;
     padding: 100px 0;
@@ -104,17 +104,21 @@ header h1 {
 
 .hero h2 {
     font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .hero h3 {
     font-size: 1.8rem;
     color: var(--secondary-color);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
+
 
 .btn {
     display: inline-block;
@@ -256,18 +260,18 @@ footer {
     padding: 20px 0;
 }
 
-/* --- **RESPONSIVE DESIGN (LA PARTE MÁS IMPORTANTE PARA CELULARES)** --- */
+/* --- **RESPONSIVE DESIGN (PARA CELULARES)** --- */
 @media (max-width: 768px) {
     header .container {
-        flex-direction: row; /* Para mantener título y hamburguesa en línea */
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
     
     .nav-menu {
-        display: none; /* Oculta el menú normal */
+        display: none;
         position: absolute;
-        top: 60px; /* Ajusta según la altura de tu header */
+        top: 60px;
         left: 0;
         right: 0;
         flex-direction: column;
@@ -278,7 +282,7 @@ footer {
     }
 
     .nav-menu.active {
-        display: flex; /* Muestra el menú cuando tiene la clase 'active' */
+        display: flex;
     }
 
     .nav-menu li {
@@ -289,7 +293,7 @@ footer {
     }
 
     .hamburger {
-        display: block; /* Muestra el botón de hamburguesa */
+        display: block;
     }
 
     h2 {
