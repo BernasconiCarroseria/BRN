@@ -256,41 +256,40 @@ footer {
     padding: 20px 0;
 }
 
-/* --- **RESPONSIVE DESIGN (PARA CELULARES)** --- */
+/* --- **RESPONSIVE DESIGN (LA PARTE MÁS IMPORTANTE PARA CELULARES)** --- */
 @media (max-width: 768px) {
     header .container {
-        flex-direction: column;
+        flex-direction: row; /* Para mantener título y hamburguesa en línea */
+        justify-content: space-between;
         align-items: center;
     }
     
     .nav-menu {
-        display: none;
+        display: none; /* Oculta el menú normal */
+        position: absolute;
+        top: 60px; /* Ajusta según la altura de tu header */
+        left: 0;
+        right: 0;
         flex-direction: column;
         width: 100%;
         text-align: center;
-        margin-top: 1rem;
-        background: var(--white);
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(5px);
     }
 
     .nav-menu.active {
-        display: flex;
+        display: flex; /* Muestra el menú cuando tiene la clase 'active' */
     }
 
     .nav-menu li {
-        margin: 10px 0;
-        padding: 10px 0;
+        margin: 0;
+        padding: 15px 0;
         border-top: 1px solid var(--light-gray);
-    }
-    
-    .nav-menu li:first-child {
-        border-top: none;
+        width: 100%;
     }
 
     .hamburger {
-        display: block;
-        position: absolute;
-        top: 15px;
-        right: 20px;
+        display: block; /* Muestra el botón de hamburguesa */
     }
 
     h2 {
